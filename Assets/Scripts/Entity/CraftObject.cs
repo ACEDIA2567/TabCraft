@@ -21,7 +21,7 @@ public class CraftObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        UpdateInfo();
+        UpdateInfo(true);
     }
 
     public void GetInit(float getCount, int getGold, int level)
@@ -38,14 +38,22 @@ public class CraftObject : MonoBehaviour
     {
         while (true)
         {
-            UpdateInfo();
-            yield return new WaitForSeconds(1f);
+            UpdateInfo(false);
+            yield return new WaitForSeconds(GameManager.Instance.autoTime);
         }
     }
 
-    private void UpdateInfo()
+    private void UpdateInfo(bool check)
     {
-        minCount++;
+        if (check)
+        {
+            minCount += GameManager.Instance.attack;
+        }
+        else
+        {
+            minCount += GameManager.Instance.autoAttack;
+        }
+
         color.a = minCount / maxCount;
         spriteRenderer.color = color;
         GameManager.Instance.currentGold += gold;

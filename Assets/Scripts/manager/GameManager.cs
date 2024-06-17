@@ -12,11 +12,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     public TextMeshProUGUI goldText;
 
+    public int attack = 1;
+    public int autoAttack = 1;
+    public float autoTime = 2.0f;
+
     private ObjectData data;
     public int attackValue = 1;
     public int currentLevel = 1;
-    private int currentExp = 0;
     public int currentGold = 0;
+    private int currentExp = 0;
 
     private void Awake()
     {
