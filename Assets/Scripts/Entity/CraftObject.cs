@@ -58,7 +58,7 @@ public class CraftObject : MonoBehaviour
         spriteRenderer.color = color;
         GameManager.Instance.currentGold += gold;
         GameManager.Instance.goldText.text = "Gold: " + GameManager.Instance.currentGold.ToString() + "G";
-        if (maxCount == minCount)
+        if (minCount >= maxCount)
         {
             GameManager.Instance.SpawnObject();
             Destroy(gameObject);
