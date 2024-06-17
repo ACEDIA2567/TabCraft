@@ -509,7 +509,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 659698099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2008659219}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: AutoAttackTimeUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &659698099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,7 +863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -162.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1204785070
@@ -1181,7 +1193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACE8\uB4DC \uB7C9"
+  m_text: 300G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 182f51dc9f1f0be4ba1a9aede826d6fd, type: 2}
   m_sharedMaterial: {fileID: 4949176285380657941, guid: 182f51dc9f1f0be4ba1a9aede826d6fd,
@@ -1478,7 +1490,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1615948465}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2008659219}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: AutoAttackUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1615948465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1574,7 +1598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACE8\uB4DC \uB7C9"
+  m_text: 500G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 182f51dc9f1f0be4ba1a9aede826d6fd, type: 2}
   m_sharedMaterial: {fileID: 4949176285380657941, guid: 182f51dc9f1f0be4ba1a9aede826d6fd,
@@ -1804,7 +1828,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1840336530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2008659219}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: AttackUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1840336530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,7 +2071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACE8\uB4DC \uB7C9"
+  m_text: 200G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 182f51dc9f1f0be4ba1a9aede826d6fd, type: 2}
   m_sharedMaterial: {fileID: 4949176285380657941, guid: 182f51dc9f1f0be4ba1a9aede826d6fd,
@@ -2138,7 +2174,7 @@ Transform:
   m_GameObject: {fileID: 1959666000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.08, y: 0.11, z: 0}
+  m_LocalPosition: {x: -3.08, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2181,6 +2217,12 @@ MonoBehaviour:
   nameText: {fileID: 2101002253}
   spawnPoint: {fileID: 1959666001}
   goldText: {fileID: 1870554966}
+  attack: 1
+  attackText: {fileID: 1940141087}
+  autoAttack: 1
+  autoAttackText: {fileID: 1449637556}
+  autoTime: 2
+  autoTimeText: {fileID: 1645701015}
   attackValue: 1
   currentLevel: 1
   currentGold: 0

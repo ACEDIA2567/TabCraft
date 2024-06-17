@@ -13,8 +13,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI goldText;
 
     public int attack = 1;
+    private int attackGold = 200;
+    public TextMeshProUGUI attackText;
+
     public int autoAttack = 1;
+    private int autoAttackGold = 300;
+    public TextMeshProUGUI autoAttackText;
+
     public float autoTime = 2.0f;
+    private int autoTimeGold = 500;
+    public TextMeshProUGUI autoTimeText;
 
     private ObjectData data;
     public int attackValue = 1;
@@ -56,5 +64,38 @@ public class GameManager : MonoBehaviour
             craftObject.GetInit(data.count, data.gold, currentLevel);
         }
         ExpUp();
+    }
+
+    public void AttackUpgrade()
+    {
+        if (currentGold > attackGold)
+        {
+            currentGold -= attackGold;
+            attack *= 2;
+            attackGold *= 2;
+            attackText.text = attackGold.ToString() + "G";
+        }
+    }
+
+    public void AutoAttackUpgrade()
+    {
+        if (currentGold > autoAttackGold)
+        {
+            currentGold -= autoAttackGold;
+            autoAttack *= 2;
+            autoAttackGold *= 2;
+            autoAttackText.text = autoAttackGold.ToString() + "G";
+        }
+    }
+
+    public void AutoAttackTimeUpgrade()
+    {
+        if (currentGold > autoTimeGold)
+        {
+            currentGold -= autoTimeGold;
+            autoTime -= 0.2f;
+            autoTimeGold *= 2;
+            autoTimeText.text = autoTimeGold.ToString() + "G";
+        }
     }
 }
