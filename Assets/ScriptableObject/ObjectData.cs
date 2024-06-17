@@ -7,6 +7,6 @@ public class ObjectData : ScriptableObject
 {
     public string objectName; // 물건 이름
     public Sprite sprite;     // 이미지
-    public int count;         // 횟수
+    public float count;         // 횟수
     public int gold;          // 골드 량
 }
