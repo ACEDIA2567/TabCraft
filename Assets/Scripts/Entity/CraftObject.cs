@@ -16,9 +16,11 @@ public class CraftObject : MonoBehaviour
 
     private void Start()
     {
+        // 오브젝트 시작 시 오토 등록
         StartCoroutine(AutoClick());
     }
 
+    // 수동으로 마우스 클릭
     void OnMouseDown()
     {
         UpdateInfo(true);

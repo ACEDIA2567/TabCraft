@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         ExpUp();
     }
 
+    // 수동 공격 강화
     public void AttackUpgrade()
     {
         if (UpdateUI(attackText, ref attackGold))
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 자동 공격 강화
     public void AutoAttackUpgrade()
     {
         if (UpdateUI(autoAttackText, ref autoAttackGold))
@@ -84,6 +86,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 자동 시간 강화
     public void AutoAttackTimeUpgrade()
     {
         if (UpdateUI(autoTimeText, ref autoTimeGold))
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // UI 갱신 및 강화 관련 값 변경
     public bool UpdateUI(TextMeshProUGUI upgradetext, ref int upgradeGold)
     {
         if (currentGold > upgradeGold)
