@@ -26,9 +26,10 @@ public class GameManager : MonoBehaviour
 
     private ObjectData data;
     public int attackValue = 1;
+    [SerializeField] private TextMeshProUGUI levelText;
     public int currentLevel = 1;
     public int currentGold = 0;
-    private int currentExp = 0;
+    public int currentExp = 0;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         if(currentExp == 10)
         {
             currentLevel++;
+            levelText.text = "Level: " + currentLevel;
             currentExp = 0;
         }
     }
@@ -68,34 +70,38 @@ public class GameManager : MonoBehaviour
 
     public void AttackUpgrade()
     {
-        if (currentGold > attackGold)
+        if (UpdateUI(attackText, ref attackGold))
         {
-            currentGold -= attackGold;
             attack *= 2;
-            attackGold *= 2;
-            attackText.text = attackGold.ToString() + "G";
         }
     }
 
     public void AutoAttackUpgrade()
     {
-        if (currentGold > autoAttackGold)
+        if (UpdateUI(autoAttackText, ref autoAttackGold))
         {
-            currentGold -= autoAttackGold;
             autoAttack *= 2;
-            autoAttackGold *= 2;
-            autoAttackText.text = autoAttackGold.ToString() + "G";
         }
     }
 
     public void AutoAttackTimeUpgrade()
     {
-        if (currentGold > autoTimeGold)
+        if (UpdateUI(autoTimeText, ref autoTimeGold))
         {
-            currentGold -= autoTimeGold;
             autoTime -= 0.2f;
-            autoTimeGold *= 2;
-            autoTimeText.text = autoTimeGold.ToString() + "G";
         }
+    }
+
+    public bool UpdateUI(TextMeshProUGUI upgradetext, ref int upgradeGold)
+    {
+        if (currentGold > upgradeGold)
+        {
+            currentGold -= upgradeGold;
+            upgradeGold *= 2;
+            upgradetext.text = upgradeGold.ToString() + "G";
+            goldText.text = "Gold: " + currentGold.ToString() + "G";
+            return true;
+        }
+        return false;
     }
 }
